@@ -19,17 +19,6 @@ public class DemoApplication {
 
 	}
 
-	@GetMapping
-	public List<User> hello() {
-		return List.of(
-				new User (
-						1L,
-						"Dazai",
-						"dazai@example.com",
-						21,
-						LocalDate.of(2000, Month.APRIL, 14)
-				)
-		);
-	}
+
 
 }
