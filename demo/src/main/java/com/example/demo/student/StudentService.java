@@ -17,7 +17,7 @@ public class StudentService {
     // declare a constant variable representing the database access layer
     private final StudentRepository studentRepository;
 
-    //
+    // dependency injection
     @Autowired
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
