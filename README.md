@@ -1,1 +1,1 @@
-Spring Boot Tutorial: https://github.com/derek-oshita/springboot
+Spring Boot Tutorial: https://www.youtube.com/watch?v=9SGDpanrc8U&ab_channel=Amigoscode

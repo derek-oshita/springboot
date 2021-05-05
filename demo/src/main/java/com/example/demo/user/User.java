@@ -10,9 +10,9 @@ public class User {
     private Integer age;
     private LocalDate dob;
 
-//    public User() {
-//
-//    }
+    public User() {
+
+    }
 
     // Constructor
     public User(Long id, String name, String email, Integer age, LocalDate dob) {
@@ -31,6 +31,7 @@ public class User {
         this.dob = dob;
     }
 
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -71,6 +72,7 @@ public class User {
         this.dob = dob;
     }
 
+    // toString(), @Override was added automatically
     @Override
     public String toString() {
         return "User{" +
