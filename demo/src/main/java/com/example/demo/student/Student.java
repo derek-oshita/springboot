@@ -3,10 +3,11 @@ package com.example.demo.student;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+// used by Hibernate
 @Entity
 @Table
 
-// this is our Student schema, the wrappers represent how we map this to a table in our database using JPA.
+// this is our Student schema, the annotations represent how we map this to a table in our database using JPA.
 public class Student {
     @Id
     @SequenceGenerator(
