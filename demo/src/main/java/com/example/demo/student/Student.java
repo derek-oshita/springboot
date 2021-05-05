@@ -1,8 +1,24 @@
-package com.example.demo.user;
+package com.example.demo.student;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
-public class User {
+@Entity
+@Table
+
+// this is our Student schema, the wrappers represent how we map this to a table in our database using JPA.
+public class Student {
+    @Id
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
+
     // Attributes
     private Long id;
     private String name;
@@ -10,12 +26,10 @@ public class User {
     private Integer age;
     private LocalDate dob;
 
-    public User() {
-
-    }
+    public Student() {}
 
     // Constructor
-    public User(Long id, String name, String email, Integer age, LocalDate dob) {
+    public Student (Long id, String name, String email, Integer age, LocalDate dob) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -23,8 +37,8 @@ public class User {
         this.dob = dob;
     }
 
-    // Constructor w/out ID
-    public User(String name, String email, Integer age, LocalDate dob) {
+    // Constructor w/out ID for database to produce
+    public Student(String name, String email, Integer age, LocalDate dob) {
         this.name = name;
         this.email = email;
         this.age = age;
@@ -75,7 +89,7 @@ public class User {
     // toString(), @Override was added automatically
     @Override
     public String toString() {
-        return "User{" +
+        return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +

@@ -1,6 +1,5 @@
-package com.example.demo.user;
+package com.example.demo.student;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -12,11 +11,11 @@ import java.util.List;
 // @Service is more semantic than @Component, but they will both work the same.
 @Service
 // this class represent the service layer that is responsible for handling business logic
-public class UserService {
+public class StudentService {
 
-    public List<User> getUsers() {
+    public List<Student> getStudents() {
         return List.of(
-                new User (
+                new Student (
                         1L,
                         "Dazai",
                         "dazai@example.com",
