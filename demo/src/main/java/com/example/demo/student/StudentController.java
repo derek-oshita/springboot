@@ -37,4 +37,9 @@ public class StudentController {
         studentService.addNewStudent(student);
     }
 
+    @DeleteMapping(path = "{studentId}")
+    public void destroyStudent (@PathVariable("studentId") Long studentId) {
+        studentService.destroyStudent(studentId);
+    }
+
 }

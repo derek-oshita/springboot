@@ -36,7 +36,16 @@ public class StudentService {
         }
 
         studentRepository.save(student);
-
         System.out.println("Student created: " + student.getName());
+    }
+
+    public void destroyStudent(Long studentId) {
+        boolean exists = studentRepository.existsById(studentId); 
+
+        if (!exists) {
+            throw new IllegalStateException("Student with id " + studentId + " does not exist.");
+        }
+
+        studentRepository.deleteById(studentId);
     }
 }
