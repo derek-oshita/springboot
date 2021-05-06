@@ -2,11 +2,11 @@ package com.example.demo.student;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 // used by Hibernate
 @Entity
 @Table
-
 // this is our Student schema, the annotations represent how we map this to a table in our database using JPA.
 public class Student {
     @Id
@@ -24,25 +24,24 @@ public class Student {
     private Long id;
     private String name;
     private String email;
+    @Transient
     private Integer age;
     private LocalDate dob;
 
     public Student() {}
 
     // Constructor
-    public Student (Long id, String name, String email, Integer age, LocalDate dob) {
+    public Student (Long id, String name, String email, LocalDate dob) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.age = age;
         this.dob = dob;
     }
 
     // Constructor w/out ID for database to produce
-    public Student(String name, String email, Integer age, LocalDate dob) {
+    public Student(String name, String email, LocalDate dob) {
         this.name = name;
         this.email = email;
-        this.age = age;
         this.dob = dob;
     }
 
@@ -72,7 +71,7 @@ public class Student {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(this.dob, LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
